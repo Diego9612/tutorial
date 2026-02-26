@@ -1,5 +1,8 @@
 Hola mundo
 linea 1
+commit my-feature-2
+
+nueva linea desde master
 Linea 2
 Linea 3
 
