@@ -4,7 +4,9 @@ commit my-feature-2
 
 nueva linea desde master
 Linea 2
-Linea 3
+Linea 3 codigo lagar
+estoy corrigiendo esto  // Update 2
 
 mi trovo sul branch 
 my-feature
+practica commit fetch pull rebase
