@@ -39,41 +39,39 @@ class GameState:
       while True:
          print("Scrivi la tua mossa. Mosse disponibili: ")
          print(pos_string)
+         user_input = input(">").lower()
         # 1. Comunicare all'utente gli input validi
         # 2. Controllare sel'input è valido
         # 3. Controllare se la posiziione è vuota prima di
         # scrivere il valoer
         # 4. Se l'input non p valido, continuare a chiedere
-        keys = list(self.positions.keys())
-        pos_string = ", ".join(keys)
-        while True:
-            print("Scrivi la tua mossa. Mosse disponibili:")
-            print(pos_string)
-            user_input = input(">").lower()
+        #keys = list(self.positions.keys())
+        #pos_string = ", ".join(keys)
+        
             #  if user_input in self.positions and self.positions[user_input] == " ":
-            if self.positions.get[user_input] == " ":
-                self.positions[user_input] = self.player
-                break
-            else:
+         if self.positions.get[user_input] == " ":
+               self.positions[user_input] = self.player
+               break
+         else:
                 print("Mossa non valida")
                 
    def get_cpu_move(self):
-       valid_moves = []
-       for pos, val in self.positions.items():
-         if val ==" ":
-            valid_moves.append(pos)
+       #valid_moves = []
+       #for pos, val in self.positions.items():
+       #  if val ==" ":
+       #     valid_moves.append(pos)
        # valid_moves ) [pos for pos, val in self.positions.items() if val == " "]
-       move = choice(valid_moves)
+       move = choice(self._get_valid_moves())
        self.positions[move] = self.cpu       
       
    def is_end_game(self):  
       # return true if draw
       # return winning if the game is not over
       # return 
-      valid_moves = [pos for pos, val in self.positions.items() if val ==" "]
-      if not valid_moves:
-         return True
-      return False
+      #valid_moves = [pos for pos, val in self.positions.items() if val ==" "]
+      #if not valid_moves:
+      #   return True
+      #return False
       if not self._get_valid_moves():
          return True
       p = self.positions
@@ -136,6 +134,5 @@ def get_player_letter():
        
 pl = get_player_letter()
 g = GameState(player_letter=pl)
-g.print_grid()
-g.get_player_move()
-g.get_player_letter()
+g.start_game()
+
